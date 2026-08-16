@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regimen — medication lifestyle advisor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@400..700&family=Story+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="a11y-bar">
+  <button id="themeToggle" class="a11y-btn" aria-label="Toggle night mode" title="Toggle night mode">🌙</button>
+  <button id="textSizeToggle" class="a11y-btn" aria-label="Make text bigger" title="Make everything bigger">A+</button>
+</div>
+<div class="wrap">
+  <header>
+    <div class="dot-cluster" aria-hidden="true"><span class="dc teal"></span><span class="dc violet"></span><span class="dc orange"></span></div>
+    <div class="eyebrow">Regimen · lifestyle advisor</div>
+    <h1>Get the most out of <span class="script-wrap">what you're<span class="script-accent">taking</span></span>.</h1>
+    <p class="sub">Enter every medication you're currently on. Live label data from RxNorm and openFDA decides which lifestyle questions actually matter for you — no filler questions. Covers US-approved medications only.</p>
+  </header>
+
+  <section id="step1">
+    <div class="section-head"><span class="num n-teal">1</span><h2>Your medications</h2></div>
+    <div class="entry-row">
+      <input type="text" id="drugInput" placeholder="e.g. Zoloft, Metoprolol, Advil" autocomplete="off">
+      <button class="btn-primary" id="addBtn">Add</button>
+    </div>
+    <p class="helper" id="helperText">Add one at a time — we'll look each one up as you go.</p>
+    <div class="drug-list" id="drugList"></div>
+    <div class="actions">
+      <button class="btn-primary" id="continueBtn" disabled>Continue to questions</button>
+    </div>
+  </section>
+
+  <section id="step2">
+    <div class="section-head"><span class="num n-violet">2</span><h2>A few quick questions</h2></div>
+    <p class="helper" id="qHelper"></p>
+    <div id="questionList"></div>
+    <div class="actions">
+      <button class="btn-primary" id="getAdviceBtn">Get my advice</button>
+    </div>
+  </section>
+
+  <section id="step3">
+    <div class="section-head"><span class="num n-orange">3</span><h2>Your advice</h2></div>
+    <div id="resultList"></div>
+    <div class="actions">
+      <button class="btn-ghost" id="restartBtn">Start over</button>
+    </div>
+  </section>
+
+  <div class="disclaimer">
+    This tool summarizes publicly available FDA label data and general lifestyle guidance. It is not a substitute for advice from your doctor or pharmacist — always confirm changes to how or when you take a medication with them.
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
